@@ -6,6 +6,7 @@ import Footer from "../../components/Footer/Footer";
 function Login() {
     const navigate = useNavigate();
     const token = localStorage.getItem('token');
+    console.log
     
     if(token){
         navigate('/');
@@ -15,7 +16,7 @@ function Login() {
     }
 
     const handleGoogleLogin = () => {
-        window.location.href = "https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=https://reachinbox-ai-ts.vercel.app/";
+        window.location.href = "https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=https://rech-in-box-ai-nandesh-assignment-main.vercel.app/";
     };
 
     return (
@@ -34,8 +35,8 @@ function Login() {
                     </div>
                     <div className="mt-10">
                         <div onClick={handleGoogleLogin}
-                            className="bg-gradient-to-r from-[#4B63DD] to-[#0524BFFC] my-5 mx-16 py-3 px-6 text-sm rounded-lg cursor-pointer text-white">
-                            Create an Account
+                            className="bg-gradient-to-r from-[#4B63DD] to-[#0524BF] my-5 mx-16 py-3 px-6 text-sm rounded-lg cursor-pointer text-white">
+                            Create Account
                         </div>
                         <div className="flex justify-center gap-1 text-gray-500 my-8">
                             Already have an account?{" "}
