@@ -6,7 +6,6 @@ import { FaReply } from "react-icons/fa";
 import { SlArrowDown } from "react-icons/sl";
 import { GoDotFill } from "react-icons/go";
 import DeletePopUp from "../DeletePopup/DeletePopUp";
-import '../CenterPage/CenterPage.css'; // Import the CSS file
 
 interface MailData {
   id: number;
@@ -106,29 +105,30 @@ const CenterPage: React.FC<Props> = ({ selectedThread }) => {
   }, [selectedThread, showDelete]);
 
   return (
-    <div className="container">
-      <div className="header">
-        <div className="header-left">
-          <div className="header-left-name">Orlando</div>
-          <div className="header-left-email">orladom@gmail.com</div>
+    <div className="relative overflow-y-scroll h-full">
+      <div className="flex justify-between p-4 border-b-2 border-gray-200">
+        <div>
+          <div className="text-lg text-black">Orlando</div>
+          <div className="text-sm text-gray-600">orladom@gmail.com</div>
         </div>
-        <div className="actions">
-          <div className="action-item action-item--completed">
-            <GoDotFill/> Meeting Completed{" "}
+        <div className="flex items-center gap-3">
+          <div className="flex items-center border border-gray-600 rounded px-3 py-2 text-sm text-black">
+            <GoDotFill /> Meeting Completed
             <SlArrowDown className="ml-2" />
           </div>
-          <div className="action-item action-item--move">
-            Move <SlArrowDown className="ml-2" />
+          <div className="flex items-center border border-gray-600 rounded px-3 py-2 text-sm text-black">
+            Move
+            <SlArrowDown className="ml-2" />
           </div>
-          <div className="action-item action-item--more">
+          <div className="flex items-center border border-gray-600 rounded px-3 py-2 text-sm text-black">
             ...
           </div>
         </div>
       </div>
 
-      <div className="divider">
-        <div className="divider-line"></div>
-        <div className="divider-text">Today</div>
+      <div className="relative flex justify-center items-center py-4">
+        <div className="absolute inset-x-0 top-1/2 bg-gray-200 h-px" />
+        <div className="relative bg-gray-200 px-4 text-sm text-black">Today</div>
       </div>
 
       <div>
@@ -137,16 +137,15 @@ const CenterPage: React.FC<Props> = ({ selectedThread }) => {
         ))}
       </div>
 
-      <div className="divider">
-        <div className="divider-line"></div>
-        <div className="divider-text">
-          <MdOutlineExpand/> View all{" "}
-          <pre className="text-blue-500"> 4 </pre> replies
+      <div className="relative flex justify-center items-center py-4">
+        <div className="absolute inset-x-0 top-1/2 bg-gray-200 h-px" />
+        <div className="relative flex items-center gap-2 text-sm text-blue-500">
+          <MdOutlineExpand /> View all <span className="text-blue-500">4</span> replies
         </div>
       </div>
 
       {showPopUp && (
-        <div className="popup">
+        <div className="fixed inset-0 bg-gray-500 bg-opacity-75 flex justify-center items-center z-50">
           <CustomMail
             threadId={selectedThread}
             onClose={() => setShowPopUp(false)}
@@ -155,10 +154,10 @@ const CenterPage: React.FC<Props> = ({ selectedThread }) => {
       )}
 
       <div
-        className="reply-button"
+        className="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-lg px-6 py-2 flex items-center cursor-pointer z-10"
         onClick={togglePopUp}
       >
-        <FaReply className="reply-button-icon text-xl" /> Reply
+        <FaReply className="mr-2 text-xl" /> Reply
       </div>
 
       {showDelete && (
@@ -173,20 +172,17 @@ const CenterPage: React.FC<Props> = ({ selectedThread }) => {
 
 const Mail: React.FC<MailData> = ({ fromEmail, toEmail, subject, body }) => {
   return (
-    <div className="mail">
-      <div className="mail-content">
-        <div className="mail-header">
-          <div className="mail-header-left">
-            <div className="mail-subject">{subject}</div>
-            <div className="mail-from">from: {fromEmail}</div>
-            <div className="mail-to">to: {toEmail}</div>
+    <div className="bg-white border border-gray-600 rounded-lg my-2 mx-8">
+      <div className="p-4">
+        <div className="flex justify-between mb-4">
+          <div className="flex flex-col">
+            <div className="font-bold text-black">{subject}</div>
+            <div className="text-sm text-gray-600">from: {fromEmail}</div>
+            <div className="text-sm text-gray-600">to: {toEmail}</div>
           </div>
-          <div className="mail-date">20 June 2022 : 9:16 AM</div>
+          <div className="text-sm text-gray-600">20 June 2022 : 9:16 AM</div>
         </div>
-        <div
-          className="mail-body"
-          dangerouslySetInnerHTML={{ __html: body }}
-        />
+        <div className="text-gray-900" dangerouslySetInnerHTML={{ __html: body }} />
       </div>
     </div>
   );

@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import AppBar from "../../components/AppBar/appbar";
 import google from "../../assets/google.svg";
 import Footer from "../../components/Footer/Footer";
-import './Login.css';
 
 function Login() {
     const navigate = useNavigate();
@@ -22,26 +21,25 @@ function Login() {
     return (
         <div>
             <AppBar />
-            <div className="login-container">
-                <div className="login-box">
+            <div className="bg-black text-white w-screen h-screen flex flex-col justify-center items-center">
+                <div className="h-[312px] bg-[#111214] text-center p-8 rounded-lg border border-[#343A40]">
                     <div>
-                        <div className="login-title">Create a new account</div>
+                        <div className="text-lg font-semibold">Create a new account</div>
                         <div
-                            className="google-login-btn"
+                            className="mt-6 border border-white/40 p-2 px-20 text-sm flex items-center text-gray-400 rounded-lg cursor-pointer"
                             onClick={handleGoogleLogin}>
-                            <img src={google} alt="google" />
+                            <img className="w-4 mr-3" src={google} alt="google" />
                             Sign Up with Google
                         </div>
                     </div>
-                    <div className="create">
+                    <div className="mt-10">
                         <div onClick={handleGoogleLogin}
-                            className="create-account-btn"
-                        >
+                            className="bg-gradient-to-r from-[#4B63DD] to-[#0524BFFC] my-5 mx-16 py-3 px-6 text-sm rounded-lg cursor-pointer text-white">
                             Create an Account
                         </div>
-                        <div className="signin-link">
+                        <div className="flex justify-center gap-1 text-gray-500 my-8">
                             Already have an account?{" "}
-                            <div className="sign-text" onClick={handleGoogleLogin}>
+                            <div className="text-gray-400 cursor-pointer" onClick={handleGoogleLogin}>
                                 Sign In
                             </div>
                         </div>
