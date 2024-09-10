@@ -1,9 +1,11 @@
+// OneBox.js
 import { useEffect, useState } from "react";
 import SubView from "../../components/SubView/SubView";
 import MainPage from "../../components/MainPage/MainPage";
 import SideBar from "../../components/Sidebar/SideBar";
 import TopBar from "../../components/TopBar/TopBar";
 import { useLocation, useNavigate } from "react-router-dom";
+import './OneBox.css'; // Import the CSS file
 
 function OneBox() {
   const Navigate = useNavigate();
@@ -20,19 +22,28 @@ function OneBox() {
     }
   }, [token]);
 
-  const [selectedComponent, setSelectedComponent] = useState(null);
+  const [selectedComponent, setSelectedComponent] = useState(null); 
 
-  const handleMenuItemClick = (path:any) => {
+  const handleMenuItemClick = (path: any) => {
     setSelectedComponent(path);
   };
 
+  if (selectedComponent === null) {
+    return (
+      <div className="onebox-container dark-mode">
+        <SideBar onMenuItemClick={handleMenuItemClick} />
+        <TopBar />
+        <SubView />
+      </div>
+    );
+  }
+
   return (
-    <div className={`h-screen w-screen pl-14 ${selectedComponent ? 'bg-black' : 'bg-white'}`}>
+    <div className="onebox-container dark-mode">
       <SideBar onMenuItemClick={handleMenuItemClick} />
       <TopBar />
       <div>
         {/* Render the selected component */}
-        {selectedComponent === null && <SubView />}
         {selectedComponent === "/" && <SubView />}
         {selectedComponent === "/search" && <SubView />}
         {selectedComponent === "/mail" && <SubView />}

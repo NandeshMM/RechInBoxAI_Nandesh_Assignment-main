@@ -1,12 +1,13 @@
 import logo from '../../assets/logo.png';
+import './appbar.css'; // Import the CSS file
 
 function AppBar() {
   return (
-    <div className="fixed top-0 left-0 right-0 bg-black border-b-2 border-[#25262B] text-white h-16 w-screen flex items-center justify-center">
+    <div className="appbar-container">
       <img
         src={logo}
         alt="Company Logo"
-        className="h-6"
+        className="appbar-logo"
       />
     </div>
   );
