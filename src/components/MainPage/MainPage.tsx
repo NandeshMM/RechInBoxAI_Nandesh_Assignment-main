@@ -3,7 +3,8 @@ import axios from "axios";
 import AllInbox from "../Inbox/AllInbox";
 import CenterPage from "../CenterPage/CenterPage";
 import RightSection from "../RIghtSection/RightSection";
-import loader from '../../assets/loader.gif';
+import loader from '../../assets/loader.gif'
+import './MainPage.css';
 
 function MainPage() {
   const [datas, setData] = useState([]);
@@ -35,8 +36,8 @@ function MainPage() {
   
   if (loading) {
     return (
-      <div className="bg-gray-200 dark:bg-black flex items-center justify-center h-screen w-full text-gray-700 dark:text-white">
-        <img src={loader} alt="Loading" className="w-12 h-12" />
+      <div className="loading-container">
+        <img src={loader} alt="" />
       </div>
     );
   }
@@ -46,15 +47,15 @@ function MainPage() {
   };
 
   return (
-    <div className="bg-gray-200 dark:bg-black flex h-screen w-full pt-16 text-white">
-      <div className="w-1/4">
+    <div className="main-page-container">
+      <div className="inbox-section">
         <AllInbox data={datas} loadMail={loadMail} />
       </div>
-      <div className="w-1/2">
+      <div className="center-section">
         {/* @ts-ignore */}
         <CenterPage selectedThread={selectedThread} />
       </div>
-      <div className="w-1/4">
+      <div className="right-section">
         <RightSection />
       </div>
     </div>

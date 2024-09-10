@@ -12,6 +12,7 @@ import { IoMdCode } from "react-icons/io";
 import { IoLinkSharp } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
 import { TbSquareLetterA } from "react-icons/tb";
+import './CustomMail.css';
 
 function CustomMail({ threadId, onClose }: any) {
   const [replyData, setReplyData] = useState({
@@ -38,9 +39,9 @@ function CustomMail({ threadId, onClose }: any) {
           },
         }
       );
-      onClose(); // Close the CustomMail component
     } catch {
       console.log("Reply sent successfully");
+      onClose(); // Close the CustomMail component
     }
   };
 
@@ -61,18 +62,18 @@ function CustomMail({ threadId, onClose }: any) {
   };
 
   return (
-    <div className="fixed inset-0 flex justify-center items-center bg-gray-400 bg-opacity-25 z-20 dark:bg-gray-900 dark:bg-opacity-25">
-      <div className="bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded-lg w-1/2 h-4/5">
-        <div className="flex justify-between items-center p-2 bg-gray-200 dark:bg-gray-800 border-b border-gray-300 dark:border-gray-600 rounded-t-lg">
-          <div className="pl-4 text-sm dark:text-gray-300">Reply</div>
-          <div onClick={onClose} className="cursor-pointer text-xl dark:text-gray-300">
-            <RxCross2 />
+    <div className="custom-mail-container">
+      <div className="custom-mail-box">
+        <div className="custom-mail-header">
+          <div className="custom-mail-header-title">Reply</div>
+          <div className="custom-mail-close" onClick={onClose}>
+            <RxCross2 className="custom-mail-close-icon" />
           </div>
         </div>
-        <div className="flex flex-col p-2 border-b border-gray-300 dark:border-gray-600">
-          <label className="text-gray-800 dark:text-gray-300">To:</label>
+        <div className="custom-mail-input-container">
+          <div className="label">To :</div>
           <input
-            className="bg-transparent ml-2 border-b border-gray-300 dark:border-gray-600 outline-none"
+            className="custom-mail-input"
             placeholder="Recipient's Email"
             name="to"
             value={replyData.to}
@@ -80,10 +81,10 @@ function CustomMail({ threadId, onClose }: any) {
           />
         </div>
 
-        <div className="flex flex-col p-2 border-b border-gray-300 dark:border-gray-600">
-          <label className="text-gray-800 dark:text-gray-300">From:</label>
+        <div className="custom-mail-input-container">
+          <div className="label">From :</div>
           <input
-            className="bg-transparent ml-2 border-b border-gray-300 dark:border-gray-600 outline-none"
+            className="custom-mail-input"
             placeholder="Your Email"
             name="from"
             value={replyData.from}
@@ -91,10 +92,10 @@ function CustomMail({ threadId, onClose }: any) {
           />
         </div>
 
-        <div className="flex flex-col p-2 border-b border-gray-300 dark:border-gray-600">
-          <label className="text-gray-800 dark:text-gray-300">Subject:</label>
+        <div className="custom-mail-input-container">
+          <div className="label">Subject :</div>
           <input
-            className="bg-transparent ml-2 border-b border-gray-300 dark:border-gray-600 outline-none"
+            className="custom-mail-input"
             placeholder="Subject"
             name="subject"
             value={replyData.subject}
@@ -102,9 +103,9 @@ function CustomMail({ threadId, onClose }: any) {
           />
         </div>
 
-        <div className="flex flex-col p-2 border-b border-gray-300 dark:border-gray-600">
+        <div className="custom-mail-textarea-container">
           <textarea
-            className="bg-transparent ml-2 border border-gray-300 dark:border-gray-600 outline-none h-64 resize-none"
+            className="custom-mail-textarea"
             placeholder="Message Body"
             name="body"
             value={replyData.body}
@@ -112,26 +113,26 @@ function CustomMail({ threadId, onClose }: any) {
           />
         </div>
 
-        <div className="flex items-center gap-2 h-16 pl-8">
+        <div className="custom-mail-footer">
           <div
+            className="custom-mail-send-button"
             onClick={handleSendReply}
-            className="bg-gradient-to-r from-blue-700 to-blue-900 text-white py-2 px-5 rounded-md flex items-center cursor-pointer"
           >
-            Send <FaCaretDown className="ml-2" />
+            Send <FaCaretDown className="custom-mail-send-button-icon" />
           </div>
-          <div className="text-gray-800 dark:text-gray-400">
-            <BsLightningChargeFill />
+          <div className="icon-container">
+            <BsLightningChargeFill className="icon" />
           </div>
-          <div className="text-gray-800 dark:text-gray-400">
-            <FaEye />
+          <div className="icon-container">
+            <FaEye className="icon" />
           </div>
-          <div className="flex gap-3 text-xl text-gray-800 dark:text-gray-400">
-            <TbSquareLetterA />
-            <IoLinkSharp />
-            <FaImage />
-            <FaRegSmile />
-            <FaUserMinus />
-            <IoMdCode />
+          <div className="custom-mail-icon-container">
+            <TbSquareLetterA className="icon" />
+            <IoLinkSharp className="icon" />
+            <FaImage className="icon" />
+            <FaRegSmile className="icon" />
+            <FaUserMinus className="icon" />
+            <IoMdCode className="icon" />
           </div>
         </div>
       </div>

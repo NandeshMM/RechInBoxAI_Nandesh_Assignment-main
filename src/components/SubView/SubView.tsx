@@ -1,6 +1,7 @@
 import axios from "axios";
 import img from "../../assets/i.svg";
 import { useEffect } from "react";
+import './SubView.css';
 
 function SubView() {
   useEffect(() => {
@@ -16,16 +17,17 @@ function SubView() {
   }, []);
 
   const isDarkMode = document.body.classList.contains('dark');
-
+  const containerClass = isDarkMode ? 'subview dark' : 'subview';
+  
   return (
-    <div className={`flex flex-col items-center justify-center h-screen ${isDarkMode ? 'bg-black text-white' : 'bg-gray-100 text-gray-600'}`}>
+    <div className={containerClass}>
       <div>
-        <img src={img} alt="Illustration" className="mt-12 mb-4" />
+        <img src={img} alt="Illustration" />
       </div>
-      <div className={`text-2xl my-8 ${isDarkMode ? 'text-white' : ''}`}>
+      <div className="title">
         It’s the beginning of a legendary sales pipeline
       </div>
-      <div className={`text-base ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+      <div className="subtitle">
         When you have inbound E-mails you’ll see them here
       </div>
     </div>

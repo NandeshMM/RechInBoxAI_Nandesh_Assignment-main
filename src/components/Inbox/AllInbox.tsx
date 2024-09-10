@@ -4,6 +4,7 @@ import { FaAngleDown } from "react-icons/fa";
 import { GoDotFill } from "react-icons/go";
 import { IoIosSend } from "react-icons/io";
 import { TbReload } from "react-icons/tb";
+import './AllInbox.css'; // Import the CSS file
 
 function AllInbox({
   data,
@@ -25,38 +26,39 @@ function AllInbox({
     console.error("Data is not an array:", data); 
   }
   return (
-    <div className="border-r-2 border-gray-200 bg-gray-100 h-full overflow-y-scroll dark:border-gray-700 dark:bg-black">
-      <div className="flex justify-between p-2">
-        <div className="ml-5 text-xl font-semibold text-blue-600 flex flex-col items-start">
+    <div className="container">
+      <div className="header1">
+        <div className="header-title">
           <div>
-            All Inbox(s){" "}
-            <FaAngleDown className="ml-2 mt-1 cursor-pointer" />
+          All Inbox(s){" "}
+          <FaAngleDown className="header-title-icon" />
           </div>
-          <div className="text-sm text-gray-600 dark:text-gray-300">
-            <pre className="font-semibold text-black dark:text-white">{data.length}/25</pre> Inboxes selected
-          </div>
+          <div className="desc"><pre>{data.length}/25 </pre>Inboxes selected</div>
         </div>
         <div
-          className="p-3 mt-3 mr-4 bg-white border border-gray-200 rounded-full cursor-pointer flex items-center dark:bg-gray-800 dark:border-gray-600"
+          className="reload-button"
           onClick={reloadHandler}
         >
-          <TbReload className="text-black dark:text-gray-300" />
+          <TbReload className="reload-button-icon" />
         </div>
       </div>
-      <div className="relative mx-8 my-4">
+      <div className="search-container">
         <input
-          placeholder="Search"
-          className="w-full bg-gray-200 border border-gray-300 rounded-lg pl-10 py-1 text-gray-700 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300"
+          placeholder=" Search"
+          className="search-input"
         />
-        <CiSearch className="absolute left-2 top-1/2 transform -translate-y-1/2 text-gray-500 dark:text-gray-400" />
+        <CiSearch className="search-icon" />
       </div>
 
-      <div className="flex justify-between p-4 mx-8">
-        <div className="bg-gray-200 text-blue-600 px-2 py-1 rounded-full text-xs dark:bg-gray-800 dark:text-green-300">
-          {data.length} New Replies
+      <div className="new-replies">
+        <div className="header-info">
+          <span className="new-replies-count">
+            {data.length}
+          </span>{" "}
+          New Replies
         </div>
-        <div className="flex items-center text-black dark:text-gray-300 text-sm">
-          Newest <FaAngleDown className="ml-3 text-xl dark:text-gray-300" />
+        <div className="sort-options">
+          Newest <FaAngleDown className="sort-icon" />
         </div>
       </div>
 
@@ -100,28 +102,26 @@ function Mail({
 
   return (
     <div
-      className="border-t-2 border-gray-400 my-4 mx-8 py-4 cursor-pointer dark:border-gray-600"
+      className="mail-item"
       onClick={handleMailClick}
     >
-      <div className="flex justify-between">
-        <div className="text-lg text-black dark:text-gray-300">
-          {fromEmail}
+      <div>
+        <div className="mail-header">
+          <div className="mail-from-by">{fromEmail}</div>
+          <div className="mail-date">Mar 7</div>
         </div>
-        <div className="text-xs text-gray-500 dark:text-gray-400">
-          Mar 7
+        <div className="mail-subject">
+          {trimSubject(subject, 7)}
         </div>
-      </div>
-      <div className="text-sm font-medium text-gray-700 dark:text-gray-300 py-2">
-        {trimSubject(subject, 7)}
-      </div>
-      <div className="flex">
-        <div className="bg-cyan-300 text-orange-600 px-2 py-1 rounded-full text-xs flex items-center dark:bg-gray-800 dark:text-green-300">
-          <GoDotFill className="mr-1" />
-          Interested
-        </div>
-        <div className="bg-gray-200 text-black px-3 py-1 rounded-full text-xs flex items-center ml-2 dark:bg-gray-800 dark:text-gray-300">
-          <IoIosSend className="mr-1" />
-          Campaign Name
+        <div className="mail-tags">
+          <div className="mail-tag">
+            <GoDotFill/>
+            Interested
+          </div>
+          <div className="mail-tag mail-tag-campaign">
+            <IoIosSend/>
+            Campaign Name
+          </div>
         </div>
       </div>
     </div>
