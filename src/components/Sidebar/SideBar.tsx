@@ -7,7 +7,6 @@ import send_icon from '../../assets/send_icon.png';
 import stack_icon from '../../assets/menu_icon.png'; 
 import inbox_icon from '../../assets/inbox_icon.png';
 import stats_icon from '../../assets/analytics_icon.png';
-import './Sidebar.css';
 
 type SideBarProps = {
   onMenuItemClick: (path: string) => void;
@@ -21,38 +20,34 @@ function SideBar({ onMenuItemClick }: SideBarProps) {
     onMenuItemClick(path);
   };
 
+  const isDarkMode = document.body.classList.contains('dark');
+
   return (
-    <div className={`sidebar ${document.body.classList.contains('dark') ? 'dark' : ''}`}>
-      <div className="sidebar-logo">
-        <img src={sidebar_logo} alt="Logo" />
+    <div className={`flex flex-col items-center justify-between h-screen w-14 p-2 fixed top-0 left-0 border-r-2 ${isDarkMode ? 'bg-gray-900 border-gray-700' : 'bg-white border-gray-200'} overflow-y-auto z-10`}>
+      <div className="flex flex-col items-center gap-4 mt-[-5px] mb-7">
+        <img src={sidebar_logo} alt="Logo" className="h-12 object-left" />
       </div>
-      <div className="sidebar-menu">
-        <div className={`sidebar-item ${selectedItem === '/' ? 'active' : ''}`} onClick={() => handleMenuItemClick('/')}>
-          <img src={home_icon} alt="Home" className="icon"/>
-        </div>
-        <div className={`sidebar-item ${selectedItem === '/search' ? 'active' : ''}`} onClick={() => handleMenuItemClick('/search')}>
-          <img src={search_icon} alt="Search" className="icon"/>
-        </div>
-        <div className={`sidebar-item ${selectedItem === '/mail' ? 'active' : ''}`} onClick={() => handleMenuItemClick('/mail')}>
-          <img src={mail_icon} alt="Mail" className="icon"/>
-        </div>
-        <div className={`sidebar-item ${selectedItem === '/send' ? 'active' : ''}`} onClick={() => handleMenuItemClick('/send')}>
-          <img src={send_icon} alt="Send" className="icon"/>
-        </div>
-        <div className={`sidebar-item ${selectedItem === '/stack' ? 'active' : ''}`} onClick={() => handleMenuItemClick('/stack')}>
-          <img src={stack_icon} alt="Stack" className="icon"/>
-        </div>
-        <div className={`sidebar-item ${selectedItem === '/inbox' ? 'active' : ''}`} onClick={() => handleMenuItemClick('/inbox')}>
-          <img src={inbox_icon} alt="Inbox" className="icon"/>
-        </div>
-        <div className={`sidebar-item ${selectedItem === '/stacks' ? 'active' : ''}`} onClick={() => handleMenuItemClick('/stacks')}>
-          <img src={stats_icon} alt="Stats" className="icon"/>
-        </div>
+      <div className="flex flex-col items-center gap-5 text-gray-400 text-lg">
+        {[
+          { path: '/', icon: home_icon },
+          { path: '/search', icon: search_icon },
+          { path: '/mail', icon: mail_icon },
+          { path: '/send', icon: send_icon },
+          { path: '/stack', icon: stack_icon },
+          { path: '/inbox', icon: inbox_icon },
+          { path: '/stacks', icon: stats_icon }
+        ].map(({ path, icon }) => (
+          <div
+            key={path}
+            className={`flex items-center justify-center p-1 cursor-pointer ${selectedItem === path ? 'transform scale-110 rounded-lg bg-gray-200 dark:bg-gray-800 transition-transform duration-300 ease-in-out' : ''}`}
+            onClick={() => handleMenuItemClick(path)}
+          >
+            <img src={icon} alt="" className="w-6 h-6" />
+          </div>
+        ))}
       </div>
-      <div className="sidebar-footer">
-        <div>
+      <div className="flex items-center justify-center w-8 h-8 bg-red-500 text-white rounded-full">
         PS
-        </div>
       </div>
     </div>
   );
