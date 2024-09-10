@@ -51,7 +51,7 @@ function SideBar({ onMenuItemClick }: SideBarProps) {
       </div>
       <div className="sidebar-footer">
         <div>
-        PS
+        M
         </div>
       </div>
     </div>

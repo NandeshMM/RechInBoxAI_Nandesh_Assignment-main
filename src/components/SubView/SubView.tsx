@@ -24,12 +24,13 @@ function SubView() {
       <div>
         <img src={img} alt="Illustration" />
       </div>
-      <div className="title">
+      <div className="title thick">
         It’s the beginning of a legendary sales pipeline
       </div>
-      <div className="subtitle">
-        When you have inbound E-mails you’ll see them here
+      <div className="subtitle align-middle">
+        When you have inbound E-mails
       </div>
+      <div className="subtitle">you’ll see them here</div>
     </div>
   );
 }

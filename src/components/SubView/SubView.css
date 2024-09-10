@@ -31,4 +31,8 @@
   .subview.dark .subtitle {
     color: #9E9E9E;
   }
+
+  .thick {
+    font-weight: bold;
+  }
   
