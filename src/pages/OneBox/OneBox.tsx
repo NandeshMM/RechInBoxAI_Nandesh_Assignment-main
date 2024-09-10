@@ -13,14 +13,14 @@ function OneBox() {
   const queryParams = new URLSearchParams(location.search);
   const token = queryParams.get("token");
 
-  // useEffect(() => {
-  //   if (!token) {
-  //     Navigate("/login");
-  //   }
-  //   if (token) {
-  //     localStorage.setItem("token", `Bearer ${token}`);
-  //   }
-  // }, [token]);
+  useEffect(() => {
+    if (!token) {
+      Navigate("/login");
+    }
+    if (token) {
+      localStorage.setItem("token", `Bearer ${token}`);
+    }
+  }, [token]);
 
   const [selectedComponent, setSelectedComponent] = useState(null); 
 
