@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FaSun, FaMoon } from "react-icons/fa";
+import { FaMoon } from "react-icons/fa";
 import './ThemeToggle.css';
 import theme from "../Images/light_mode.png"
 

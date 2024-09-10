@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import AllInbox from "../Inbox/AllInbox";
-import CenterPage from "../CenterPage/CenterPage";
-import RightSection from "../RIghtSection/RightSection";
+import AllInbox from "../Inbox_Mail/AllInbox";
+import CenterPage from "../Cernter_Window/CenterPage";
+import RightSection from "../Right_Side_Bar/RightSection";
 import loader from '../../assets/loader.gif'
 import './MainPage.css';
 

@@ -1,5 +1,5 @@
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-import ThemeToggle from "../ThemeToggle/ThemeToggle";
+import ThemeToggle from "../Switch_Theme_Button/ThemeToggle";
 import './TopBar.css';
 
 function TopBar() {

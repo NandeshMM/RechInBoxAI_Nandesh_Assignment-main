@@ -1,9 +1,9 @@
 // OneBox.js
 import { useEffect, useState } from "react";
-import SubView from "../../components/SubView/SubView";
-import MainPage from "../../components/MainPage/MainPage";
-import SideBar from "../../components/Sidebar/SideBar";
-import TopBar from "../../components/TopBar/TopBar";
+import SubView from "../../components/Background_Window/SubView";
+import MainPage from "../../components/Main_Window/MainPage";
+import SideBar from "../../components/Left_Side_Bar/SideBar";
+import TopBar from "../../components/Nav_Bar/TopBar";
 import { useLocation, useNavigate } from "react-router-dom";
 import './OneBox.css'; // Import the CSS file
 
