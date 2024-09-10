@@ -14,13 +14,13 @@ function ThemeToggle() {
     }, [darkMode]);
 
     return (
-        <div className={`mr-10 ${darkMode ? 'dark' : ''}`}>
+        <div className={`mr-10 ${darkMode ? 'dark:mr-10' : ''}`}>
             <button
-                className={`bg-gray-200 text-gray-800 px-3 py-2 rounded-md flex items-center ${darkMode ? 'bg-gray-700 text-white' : ''}`}
+                className={`bg-gray-200 text-gray-800 px-3 py-2 rounded-md flex items-center ${darkMode ? 'dark:bg-gray-200 dark:text-gray-800 dark:px-3 dark:py-2 rounded-md flex items-center' : ''}`}
                 onClick={() => setDarkMode(!darkMode)}
             >
                 {darkMode ? (
-                    <FaSun className="mr-2" />
+                    <FaSun className="mr-2 dark:mr-2" />
                 ) : (
                     <FaMoon className="mr-2" />
                 )}
