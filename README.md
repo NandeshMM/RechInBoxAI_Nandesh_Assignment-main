@@ -5,7 +5,7 @@ The assignment is to build frontend tool using reactjs, css and API's which prov
 
 
 ## deployed links :
-[Link](https://reach-inbox-assignment.vercel.app/)
+Link :- [Link](https://reach-inbox-assignment.vercel.app/)
 
 ## demo video link
 Video link for demo of this Application - [Link](https://www.loom.com/share/51a86498fb774c6ba1602c0a2625cebe?sid=bf5e9f0d-23f8-4d54-a89b-b0d3d3412c35)
