@@ -96,7 +96,7 @@ const CenterPage: React.FC<Props> = ({ selectedThread }) => {
             toName: "",
             toEmail: "lennon.j@mail.com",
             subject: "New Product Launch",
-            body: "I would like to introduce you to SaaSgrow, a productized design service specifically tailored for saas startups. Our aim is to help you enhance the user experience and boost the visual appeal of your software products.",
+            body: "Hi {FIRST_NAME},I would like to introduce you to SaaSgrow, a productized design service specifically tailored for saas startups. Our aim is to help you enhance the user experience and boost the visual appeal of your software products.",
             sentAt: "2022-01-01T00:00:00.000Z",
           },
         ]);
