@@ -27,8 +27,10 @@ git clone https://github.com/NandeshMM/RechInBoxAI_Nandesh_Assignment-main
 
 3. Run `npm install` to install all the dependencies
 
-4. To run the project, excute the following command in your terminal
+5. To run the project, excute the following command in your terminal
 ```bash
 npm run dev
 ```
+
+![image](https://github.com/user-attachments/assets/e0b4936d-1968-4efc-bba4-4aaede79f049)
 
