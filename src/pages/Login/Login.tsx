@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import AppBar from "../../components/App_Bar/appbar";
+import AppBar from "../../components/App_Bar/App_bar.js";
 import google from "../../assets/google.svg";
-import Footer from "../../components/Footer/Footer";
+import Footer from "../../components/Footer/Footer.js";
 import './Login.css';
 
 function Login() {
@@ -16,7 +16,7 @@ function Login() {
     }
 
     const handleGoogleLogin = () => {
-        window.location.href = "https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=https://reachinbox-ai-ts.vercel.app/";
+        window.location.href = "https://hiring.reachinbox.xyz/api/v1/auth/google-login?redirect_to=https://rech-in-box-ai-nandesh-assignment-main.vercel.app/";
     };
 
     return (

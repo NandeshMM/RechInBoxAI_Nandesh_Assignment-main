@@ -7,7 +7,7 @@ import send_icon from '../../assets/send_icon.png';
 import stack_icon from '../../assets/menu_icon.png'; 
 import inbox_icon from '../../assets/inbox_icon.png';
 import stats_icon from '../../assets/analytics_icon.png';
-import './Sidebar.css';
+import './Left_Side_Bar.css';
 
 type SideBarProps = {
   onMenuItemClick: (path: string) => void;

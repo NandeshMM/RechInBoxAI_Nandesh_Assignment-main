@@ -4,7 +4,7 @@ import { FaAngleDown } from "react-icons/fa";
 import { GoDotFill } from "react-icons/go";
 import { IoIosSend } from "react-icons/io";
 import { TbReload } from "react-icons/tb";
-import './AllInbox.css'; // Import the CSS file
+import './Inbox_Mail.css'; // Import the CSS file
 
 function AllInbox({
   data,

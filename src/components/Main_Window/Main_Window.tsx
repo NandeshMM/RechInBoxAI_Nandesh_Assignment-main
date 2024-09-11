@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import AllInbox from "../Inbox_Mail/AllInbox";
-import CenterPage from "../Cernter_Window/CenterPage";
-import RightSection from "../Right_Side_Bar/RightSection";
+import AllInbox from "../Inbox_Mail/Inbox_Mail.js";
+import CenterPage from "../Cernter_Window/CenterPage.js";
+import RightSection from "../Right_Side_Bar/Right_Side_Bar.js";
 import loader from '../../assets/loader.gif'
-import './MainPage.css';
+import './Main_Window.css';
 
 function MainPage() {
   const [datas, setData] = useState([]);

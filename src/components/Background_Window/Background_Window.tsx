@@ -1,7 +1,7 @@
 import axios from "axios";
 import img from "../../assets/i.svg";
 import { useEffect } from "react";
-import './SubView.css';
+import './Background_Window.css';
 
 function SubView() {
   useEffect(() => {

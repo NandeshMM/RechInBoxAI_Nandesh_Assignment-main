@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FaMoon } from "react-icons/fa";
-import './ThemeToggle.css';
+import './Switch_Theme_Button.css';
 import theme from "../Images/light_mode.png"
 
 function ThemeToggle() {

@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import CustomMail from "../Custom_MailBox/CustomMail";
+import CustomMail from "../Custom_MailBox/Custom_Mail.js";
 import { MdOutlineExpand } from "react-icons/md";
 import { FaReply } from "react-icons/fa";
 import { SlArrowDown } from "react-icons/sl";
 import { GoDotFill } from "react-icons/go";
-import DeletePopUp from "../Delete_Window_PopUp/DeletePopUp";
-import './CenterPage.css'; // Import the CSS file
+import DeletePopUp from "../Delete_Window_PopUp/Delete_Window_PopUp.js";
+import './Center_Window.css'; // Import the CSS file
 
 interface MailData {
   id: number;

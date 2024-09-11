@@ -12,7 +12,7 @@ import { IoMdCode } from "react-icons/io";
 import { IoLinkSharp } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
 import { TbSquareLetterA } from "react-icons/tb";
-import './CustomMail.css';
+import './Custom_Mail.css';
 
 function CustomMail({ threadId, onClose }: any) {
   const [replyData, setReplyData] = useState({

@@ -1,4 +1,4 @@
-import './DeletePopUp.css';
+import './Delete_Window_PopUp.css';
 
 interface Props {
   onCancel: () => void;

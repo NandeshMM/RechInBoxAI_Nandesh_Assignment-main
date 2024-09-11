@@ -1,7 +1,7 @@
 import { IoIosSend } from 'react-icons/io';
 import mail from '../../assets/mail_icon2.png';
 import { IoMailOpen } from 'react-icons/io5';
-import './RightSection.css'; // Import the CSS file
+import './Right_Side_Bar.css'; // Import the CSS file
 
 function RightSection() {
   return (
